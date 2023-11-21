@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "kepsa-event": {
+      "hosting": {
+        "angularevent": [
+          "kepsa-event"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "kepsa-event"
+  }
+}

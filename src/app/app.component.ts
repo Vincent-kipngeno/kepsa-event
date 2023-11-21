@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit, ElementRef, Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +7,17 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angularevent';
+
+  constructor(private el: ElementRef, private renderer: Renderer2) {}
+
+  ngOnInit() {  
+    this.loadJsFile("assets/js/main.js");  
+  }  
+
+  public loadJsFile(url: string) {  
+    let node = document.createElement('script');  
+    node.src = url;  
+    node.type = 'text/javascript';  
+    document.getElementsByTagName('head')[0].appendChild(node);  
+  }  
 }
