@@ -1,7 +1,15 @@
+new window.IntaSend({
+  // Replace with your Publishable Key
+  publicAPIKey: "ISPubKey_test_91ffc81a-8ac4-419e-8008-7091caa8d73f",
+  live: false //set to true when going live
+})
+  .on("COMPLETE", (results) => console.log("Do something on success", results))
+  .on("FAILED", (results) => console.log("Do something on failure", results))
+  .on("IN-PROGRESS", (results) => console.log("Payment in progress status", results))
 
 console.log("Hello welcome");
 
-(function() {
+(function () {
   "use strict";
 
   /**
@@ -111,7 +119,7 @@ console.log("Hello welcome");
   /**
    * Mobile nav toggle
    */
-  on('click', '.mobile-nav-toggle', function(e) {
+  on('click', '.mobile-nav-toggle', function (e) {
     console.log("Toggler clicked")
     select('#navbar').classList.toggle('navbar-mobile')
     select('#navbar').classList.toggle('navbar')
@@ -122,7 +130,7 @@ console.log("Hello welcome");
   /**
    * Mobile nav dropdowns activate
    */
-  on('click', '.navbar .dropdown > a', function(e) {
+  on('click', '.navbar .dropdown > a', function (e) {
     if (select('#navbar').classList.contains('navbar-mobile')) {
       e.preventDefault()
       this.nextElementSibling.classList.toggle('dropdown-active')
@@ -132,7 +140,7 @@ console.log("Hello welcome");
   /**
    * Scrool with ofset on links with a class name .scrollto
    */
-  on('click', '.scrollto', function(e) {
+  on('click', '.scrollto', function (e) {
     if (select(this.hash)) {
       e.preventDefault()
 
@@ -213,7 +221,7 @@ console.log("Hello welcome");
   /**
    * Buy tickets select the ticket type on click
    */
-  on('show.bs.modal', '#buy-ticket-modal', function(event) {
+  on('show.bs.modal', '#buy-ticket-modal', function (event) {
     select('#buy-ticket-modal #ticket-type').value = event.relatedTarget.getAttribute('data-ticket-type')
   })
 
